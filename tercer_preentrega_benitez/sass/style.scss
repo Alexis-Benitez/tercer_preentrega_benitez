@@ -1,0 +1,204 @@
+@import 'presets/variables';
+@import 'presets/mixins';
+@import 'presets/animations';
+
+// Base Styles
+body {
+  font-family: $font-family;
+  line-height: $line-height;
+  margin: 0;
+  padding: 0;
+  color: $text-color;
+  background-color: $bg-color;
+}
+
+.container {
+  width: $container-width;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 $spacing-md;
+}
+
+// Header Styles
+header {
+  background: $secondary-color;
+  color: $light-color;
+  padding-top: $spacing-lg;
+  min-height: 70px;
+  border-bottom: $primary-color 3px solid;
+  @include animation(fadeIn);
+
+  a {
+    color: $light-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: $base-font-size;
+
+    &:hover {
+      color: $primary-color;
+      font-weight: bold;
+      @include animation(pulse, 0.6s);
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+  }
+
+  li {
+    float: left;
+    display: inline;
+    padding: 0 $spacing-md;
+  }
+
+  #branding {
+    float: left;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  nav {
+    float: right;
+    margin-top: $spacing-sm;
+  }
+
+  .highlight, .current a {
+    color: $primary-color;
+    font-weight: bold;
+  }
+}
+
+// Hero Section
+.hero {
+  min-height: 400px;
+  background: url('https://placehold.co/1200x400.png') center no-repeat;
+  text-align: center;
+  color: $light-color;
+
+  h1 {
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: $spacing-sm;
+    @include animation(slideInLeft);
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
+
+// Products Grid
+.productos-grid {
+  @include grid;
+  padding: $spacing-md;
+}
+
+.producto {
+  background: $light-color;
+  border: 1px solid $border-color;
+  padding: $spacing-sm;
+  text-align: center;
+  @include animation(bounceIn, 0.5s);
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform $transition-speed ease;
+  }
+}
+
+// Buttons
+.boton {
+  @include button;
+  @include animation(pulse, 1s, infinite);
+}
+
+// Footer
+footer {
+  background: $secondary-color;
+  color: $light-color;
+  text-align: center;
+  padding: $spacing-md 0;
+  margin-top: $spacing-md;
+  @include animation(slideUp);
+
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .footer-section {
+    flex-basis: 30%;
+    margin-bottom: $spacing-md;
+    @include animation(slideUp);
+    animation-delay: 0.3s;
+
+    h3 {
+      margin-bottom: $spacing-sm;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 5px;
+
+        a {
+          color: $light-color;
+          text-decoration: none;
+
+          &:hover {
+            color: $primary-color;
+            @include animation(glow, 1s, infinite alternate);
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    background: darken($secondary-color, 5%);
+    padding: $spacing-sm 0;
+    font-size: 0.8em;
+  }
+}
+
+// Responsive Design
+@include responsive($mobile) {
+  header {
+    #branding,
+    nav,
+    nav li {
+      float: none;
+      text-align: center;
+      width: 100%;
+    }
+
+    padding-bottom: $spacing-md;
+  }
+
+  .hero h1 {
+    margin-top: $spacing-lg;
+  }
+
+  .mision, .vision {
+    flex-basis: 100%;
+    margin-bottom: $spacing-md;
+  }
+
+  .contacto-detalles, .mapa {
+    flex-basis: 100%;
+    margin-bottom: $spacing-md;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "elegancia-urbana",
+  "version": "1.0.0",
+  "description": "Tienda de moda elegante",
+  "scripts": {
+    "dev": "sass src/styles/main.scss:public/css/style.css --watch",
+    "build": "sass src/styles/main.scss:public/css/style.css --style compressed"
+  },
+  "dependencies": {
+    "sass": "^1.69.5"
+  }
+}

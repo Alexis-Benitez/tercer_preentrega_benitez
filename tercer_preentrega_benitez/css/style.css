@@ -1,0 +1,244 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes bounceIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #e8491d, 0 0 15px #e8491d;
+  }
+  100% {
+    text-shadow: 0 0 10px #e8491d, 0 0 20px #e8491d, 0 0 30px #e8491d;
+  }
+}
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #e8491d 3px solid;
+  animation: fadeIn 1s ease-in-out;
+}
+header a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+header a:hover {
+  color: #e8491d;
+  font-weight: bold;
+  animation: pulse 0.6s ease-in-out;
+}
+header ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow: hidden;
+}
+header li {
+  float: left;
+  display: inline;
+  padding: 0 20px;
+}
+header #branding {
+  float: left;
+}
+header #branding h1 {
+  margin: 0;
+}
+header nav {
+  float: right;
+  margin-top: 10px;
+}
+header .highlight, header .current a {
+  color: #e8491d;
+  font-weight: bold;
+}
+
+.hero {
+  min-height: 400px;
+  background: url("https://placehold.co/1200x400.png") center no-repeat;
+  text-align: center;
+  color: #fff;
+}
+.hero h1 {
+  margin-top: 100px;
+  font-size: 55px;
+  margin-bottom: 10px;
+  animation: slideInLeft 1s ease-in-out;
+}
+.hero p {
+  font-size: 20px;
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.producto {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  animation: bounceIn 0.5s ease-in-out;
+}
+.producto img {
+  max-width: 100%;
+  height: auto;
+}
+.producto:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #e8491d;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: pulse 1s infinite;
+}
+.boton:hover {
+  background: #333;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+  animation: slideUp 1s ease-in-out;
+}
+footer .footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+footer .footer-section {
+  flex-basis: 30%;
+  margin-bottom: 20px;
+  animation: slideUp 1s ease-in-out;
+  animation-delay: 0.3s;
+}
+footer .footer-section h3 {
+  margin-bottom: 10px;
+}
+footer .footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+footer .footer-section ul li {
+  margin-bottom: 5px;
+}
+footer .footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+footer .footer-section ul li a:hover {
+  color: #e8491d;
+  animation: glow 1s infinite alternate;
+}
+footer .footer-bottom {
+  background: rgb(38.25, 38.25, 38.25);
+  padding: 10px 0;
+  font-size: 0.8em;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding-bottom: 20px;
+  }
+  header #branding,
+  header nav,
+  header nav li {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+  .hero h1 {
+    margin-top: 30px;
+  }
+  .mision, .vision {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+  .contacto-detalles, .mapa {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
